@@ -2,27 +2,7 @@
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" id="viewport-meta" />
-    <script>
-      // Force desktop 1920x1080 layout on mobile via CSS transform
-      // The page renders at 1920px wide, then the entire #root is scaled down to fit screen
-      // Both width AND height scale together — like viewing a PDF
-      (function() {
-        var desktopWidth = 1920;
-        var screenWidth = window.screen.width;
-        if (screenWidth < desktopWidth) {
-          var vp = document.getElementById('viewport-meta');
-          vp.setAttribute('content', 'width=device-width, initial-scale=1.0, user-scalable=no');
-          var scale = screenWidth / desktopWidth;
-          var style = document.createElement('style');
-          style.textContent = [
-            'html, body { margin: 0; padding: 0; overflow-x: hidden; background: #0C0C0C; }',
-            '#root { width: 1920px; transform-origin: top left; transform: scale(' + scale.toFixed(6) + '); }',
-          ].join('\\n');
-          document.head.appendChild(style);
-        }
-      })();
-    </script>
+    <meta name="viewport" content="width=1920" />
     <title>Neeko Wu — UI/UX 设计师</title>
     <meta name="description" content="Neeko Wu 的作品集，专注美团生活服务领域的 UI/UX 设计，涵盖闪购改版、每日低价、情感化设计、拼好饭增长与年度账单等项目。" />
     <meta property="og:title" content="Neeko Wu — UI/UX 设计师" />
