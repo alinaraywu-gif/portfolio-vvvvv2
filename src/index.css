@@ -1,0 +1,556 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap");
+
+@font-face {
+  font-family: "Alibaba PuHuiTi 3";
+  src: url("../public/fonts/AlibabaPuHuiTi-3-35-Thin.woff2") format("woff2");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: "Alibaba PuHuiTi 3";
+  src: url("../public/fonts/AlibabaPuHuiTi-3-45-Light.woff2") format("woff2");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Alibaba PuHuiTi 3";
+  src: url("../public/fonts/AlibabaPuHuiTi-3-55-Regular.woff2") format("woff2");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Alibaba PuHuiTi 3 L3";
+  src: url("../public/fonts/AlibabaPuHuiTi-3-55-RegularL3.woff2") format("woff2");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Alibaba PuHuiTi 3";
+  src: url("../public/fonts/AlibabaPuHuiTi-3-65-Medium.woff2") format("woff2");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Alibaba PuHuiTi 3";
+  src: url("../public/fonts/AlibabaPuHuiTi-3-75-SemiBold.woff2") format("woff2");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Alibaba PuHuiTi 3";
+  src: url("../public/fonts/AlibabaPuHuiTi-3-85-Bold.woff2") format("woff2");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Alibaba PuHuiTi 3";
+  src: url("../public/fonts/AlibabaPuHuiTi-3-95-ExtraBold.woff2") format("woff2");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: "Alibaba PuHuiTi 3";
+  src: url("../public/fonts/AlibabaPuHuiTi-3-105-Heavy.woff2") format("woff2");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: "Alibaba PuHuiTi 3";
+  src: url("../public/fonts/AlibabaPuHuiTi-3-115-Black.woff2") format("woff2");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 950;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ═══════════════════ Design System Tokens ═══════════════════ */
+
+:root {
+  --bg-base: #08090a;
+  --bg-elevated: rgba(255, 255, 255, 0.04);
+  --bg-card: rgba(255, 255, 255, 0.05);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-card: rgba(255, 255, 255, 0.1);
+
+  /* Premium Dark Motion Palette */
+  --text-primary: #f4f7f8;
+  --text-secondary: #a8b1b8;
+  --text-muted: #667078;
+  --accent-primary: #FFDD00;
+
+  /* Legacy compat */
+  --text-tertiary: rgba(232, 237, 242, 0.42);
+
+  /* Motion */
+  --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+  --duration-section: 0.8s;
+  --duration-hover: 0.4s;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  position: relative;
+  background: var(--bg-base);
+  font-family:
+    "Alibaba PuHuiTi 3",
+    "Inter",
+    "PingFang SC",
+    "Hiragino Sans GB",
+    "Microsoft YaHei",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  min-width: 320px;
+  overflow-x: clip;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ═══════════════════ Typography ═══════════════════ */
+
+.hero-heading {
+  font-family: "Kanit", "Alibaba PuHuiTi 3", sans-serif;
+  background: linear-gradient(180deg, #808a96 0%, #d6e2ee 50%, #a0b0c0 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.font-mono-data {
+  font-family: "JetBrains Mono", "SF Mono", "Fira Code", monospace;
+  font-feature-settings: "tnum" 1;
+}
+
+.text-keep {
+  word-break: keep-all;
+  overflow-wrap: normal;
+  line-break: strict;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.text-pretty {
+  text-wrap: pretty;
+}
+
+.phrase-nowrap {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* ═══════════════════ Card System ═══════════════════ */
+
+/* Deep gray surface — primary card style for all modules */
+.surface-card {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0.018) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  box-shadow:
+    0 2px 12px rgba(0, 0, 0, 0.18),
+    0 24px 80px rgba(0, 0, 0, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* Featured card with subtle glow border */
+.glow-card {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  box-shadow:
+    0 32px 100px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  border: 1px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+}
+
+.glow-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 221, 0, 0.12) 0%,
+    transparent 40%,
+    transparent 60%,
+    rgba(137, 255, 122, 0.08) 100%
+  );
+  z-index: -1;
+  mask: linear-gradient(#000, #000) content-box, linear-gradient(#000, #000);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+  padding: 1px;
+}
+
+/* Legacy glass card (still used in some pages) */
+.glass-card {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.06) 0%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+}
+
+.glass-card-hover {
+  transition: background 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+.glass-card-hover:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.09) 0%,
+    rgba(255, 255, 255, 0.04) 100%
+  );
+  border-color: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* ═══════════════════ Section Divider ═══════════════════ */
+
+.section-divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.12) 20%,
+    rgba(255, 255, 255, 0.12) 80%,
+    transparent 100%
+  );
+}
+
+/* ═══════════════════ Premium Animations ═══════════════════ */
+
+/* Count-up number animation */
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+    filter: blur(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.animate-count-up {
+  animation: countUp 0.7s var(--ease-premium) forwards;
+  opacity: 0;
+}
+
+/* Image reveal — scale + blur entrance */
+@keyframes imageReveal {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+    filter: blur(18px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+
+.animate-image-reveal {
+  animation: imageReveal 0.9s var(--ease-premium) forwards;
+  opacity: 0;
+}
+
+/* Highlight bar grow */
+@keyframes barGrow {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.animate-bar-grow {
+  animation: barGrow 1s var(--ease-premium) forwards;
+  transform-origin: left;
+  transform: scaleX(0);
+}
+
+/* Subtle float */
+@keyframes subtleFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: subtleFloat 6s ease-in-out infinite;
+}
+
+/* Glow pulse for accent elements */
+@keyframes glowPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(255, 221, 0, 0.12);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(255, 221, 0, 0.2);
+  }
+}
+
+.animate-glow-pulse {
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+/* ═══════════════════ Marquee / Trail (case pages) ═══════════════════ */
+
+@keyframes caseMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes caseFadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes caseFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-16px);
+  }
+}
+
+@keyframes caseTrailFade {
+  0% {
+    opacity: 0;
+    scale: 0.88;
+  }
+  18% {
+    opacity: 1;
+    scale: 1;
+  }
+  100% {
+    opacity: 0;
+    scale: 0.92;
+  }
+}
+
+.case-marquee-track {
+  animation: caseMarquee 34s linear infinite;
+}
+
+.case-marquee:hover .case-marquee-track {
+  animation-play-state: paused;
+}
+
+.case-fade-in-up {
+  animation: caseFadeInUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  opacity: 0;
+}
+
+.case-float-image {
+  animation: caseFloat 7s ease-in-out infinite;
+}
+
+.case-trail-card {
+  animation: caseTrailFade 1s ease-out forwards;
+}
+
+@keyframes trailFadeOut {
+  0% {
+    opacity: 1;
+    transform: scale(1) rotate(var(--trail-rotate, 0deg));
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.8) rotate(var(--trail-rotate, 0deg));
+  }
+}
+
+/* ═══════════════════ Scroll Stack (landing page only) ═══════════════════ */
+
+.scroll-stack {
+  min-height: var(--scroll-stack-min-height);
+  position: relative;
+}
+
+.scroll-stack__items {
+  position: relative;
+  padding-bottom: 0;
+}
+
+.scroll-stack__item {
+  min-height: 700px;
+  height: 85vh;
+  margin-bottom: var(--scroll-stack-item-distance);
+  position: relative;
+  transform-origin: top center;
+  transform-style: preserve-3d;
+  will-change: transform, filter;
+}
+
+.scroll-stack__item > * {
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.scroll-stack--static {
+  min-height: auto;
+}
+
+.scroll-stack--static .scroll-stack__items {
+  display: grid;
+  gap: 2rem;
+  padding-bottom: 0;
+}
+
+.scroll-stack--static .scroll-stack__item {
+  height: auto;
+  margin-bottom: 0;
+  min-height: 0;
+  transform: none !important;
+  filter: none !important;
+  will-change: auto;
+}
+
+.scroll-stack__end {
+  height: var(--scroll-stack-release-space);
+  pointer-events: none;
+}
+
+/* ═══════════════════ Hover Reveal Effect ═══════════════════ */
+
+.hover-reveal-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.hover-reveal-item .hover-reveal-img {
+  opacity: 0;
+  transform: scale(0.92);
+  filter: blur(14px);
+  transition:
+    opacity 0.5s var(--ease-premium),
+    transform 0.5s var(--ease-premium),
+    filter 0.5s var(--ease-premium);
+  pointer-events: none;
+}
+
+.hover-reveal-item:hover .hover-reveal-img {
+  opacity: 1;
+  transform: scale(1);
+  filter: blur(0);
+}
+
+/* ═══════════════════ Responsive ═══════════════════ */
+
+@media (max-width: 768px) {
+  .case-marquee-track {
+    animation-duration: 18s;
+  }
+
+  .scroll-stack {
+    min-height: auto !important;
+  }
+
+  .scroll-stack__items {
+    display: grid;
+    gap: 1.5rem;
+    padding-bottom: 0;
+  }
+
+  .scroll-stack__item {
+    height: auto;
+    margin-bottom: 0;
+    min-height: 0;
+    transform: none !important;
+    filter: none !important;
+    will-change: auto;
+  }
+
+  .scroll-stack__end {
+    display: none;
+  }
+}
+
+/* Nav scroll animation for merchant category navigation */
+@keyframes navScroll {
+  0%, 10% {
+    transform: translateY(0);
+  }
+  45%, 55% {
+    transform: translateY(calc(-100% + 420px));
+  }
+  90%, 100% {
+    transform: translateY(0);
+  }
+}
