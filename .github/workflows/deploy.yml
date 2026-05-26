@@ -22,25 +22,22 @@ jobs:
         with:
           lfs: false
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: '22'
-
-      - name: Free disk space
-        run: |
-          sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL
-          df -h /
+          cache: 'pnpm'
 
       - name: Install dependencies
-        run: |
-          npm cache clean --force
-          npm install --no-audit --no-fund
-        env:
-          NODE_OPTIONS: '--max-old-space-size=4096'
+        run: pnpm install --no-frozen-lockfile
 
       - name: Build
-        run: npm run build
+        run: pnpm run build
         env:
           NODE_OPTIONS: '--max-old-space-size=4096'
 
