@@ -14,8 +14,8 @@ const selectedPublicDirs = [
 ];
 
 const selectedPublicFiles = new Set([
-  "assets/neeko-avatar.gif",
   "assets/neeko-avatar.mp4",
+  "assets/neeko-avatar.webp",
   "assets/written-tests/95fen-pdp-redesign.pdf",
   "assets/written-tests/douyin-gift-panel.pdf",
   "assets/written-tests/jd-health-ai.pdf",

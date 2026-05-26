@@ -6,7 +6,7 @@ export default function AnimatedAvatar({ className }: { className?: string }) {
       alt="Neeko Wu 个人头像动效"
       className={className}
       draggable={false}
-      src={assetPath("assets/neeko-avatar.gif")}
+      src={assetPath("assets/neeko-avatar.webp")}
     />
   );
 }
