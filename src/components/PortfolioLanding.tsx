@@ -561,7 +561,7 @@ function ServicesSection() {
 }
 
 function ProjectsSection() {
-  const stackMinHeight = `${Math.max(homeProjects.length, 1) * 72}vh`;
+  const stackMinHeight = `calc(var(--vh) * ${Math.max(homeProjects.length, 1) * 72})`;
 
   return (
     <section
@@ -652,9 +652,9 @@ function ScrollStack({
   const itemCount = items.length;
   const isStackDisabled =
     disabled || shouldReduceMotion || isMobile || itemCount < 2;
-  const releaseSpace = `max(30vh, ${itemCount * itemStackDistance + 120}px)`;
+  const releaseSpace = `max(calc(var(--vh) * 30), ${itemCount * itemStackDistance + 120}px)`;
   const shellStyle = {
-    "--scroll-stack-min-height": minHeight || `${Math.max(itemCount, 1) * 78}vh`,
+    "--scroll-stack-min-height": minHeight || `calc(var(--vh) * ${Math.max(itemCount, 1) * 78})`,
     "--scroll-stack-release-space": releaseSpace,
   } as CSSProperties;
 

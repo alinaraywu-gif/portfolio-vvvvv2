@@ -321,7 +321,7 @@ function HeroSection() {
   return (
     <section className="relative pb-[clamp(72px,11vw,150px)] pt-10">
       <PageContainer wide>
-        <div className="grid min-h-[calc(100vh-150px)] gap-14 lg:grid-cols-[minmax(0,0.92fr)_minmax(360px,0.72fr)] lg:items-center">
+        <div className="grid min-h-[calc(var(--vh)*100-150px)] gap-14 lg:grid-cols-[minmax(0,0.92fr)_minmax(360px,0.72fr)] lg:items-center">
           <div>
             <FadeInSection>
               <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[#FF2469]">

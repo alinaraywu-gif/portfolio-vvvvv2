@@ -740,7 +740,7 @@ export default function InstantRetailCaseDetail() {
   return (
     <main className="relative isolate min-h-screen overflow-x-clip bg-[#050608] pb-28 text-[#F4F7F8]">
       {/* Ambient background */}
-      <div className="pointer-events-none fixed inset-0 z-0 h-screen w-screen opacity-[0.18]">
+      <div className="pointer-events-none fixed inset-0 z-0 h-[calc(var(--vh)*100)] w-screen opacity-[0.18]">
         <LiquidEther
           colors={["#FFDD00", "#FFE8A0", "#FFDD00"]}
           style={{ width: '100%', height: '100%' }}

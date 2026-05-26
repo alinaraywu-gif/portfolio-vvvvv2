@@ -2,7 +2,7 @@
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=1920" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Neeko Wu — UI/UX 设计师</title>
     <meta name="description" content="Neeko Wu 的作品集，专注美团生活服务领域的 UI/UX 设计，涵盖闪购改版、每日低价、情感化设计、拼好饭增长与年度账单等项目。" />
     <meta property="og:title" content="Neeko Wu — UI/UX 设计师" />
@@ -12,6 +12,18 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Neeko Wu — UI/UX 设计师" />
     <meta name="twitter:description" content="专注美团生活服务领域的 UI/UX 设计作品集。" />
+    <script>
+      // PDF-like scaling: on mobile/narrow screens, set viewport width to 1440
+      // so the browser renders the page as if it were 1440px wide, then scales down.
+      (function () {
+        var DESIGN_WIDTH = 1440;
+        var isMobile = window.screen.width < 1024;
+        if (isMobile) {
+          var meta = document.querySelector('meta[name="viewport"]');
+          if (meta) meta.setAttribute("content", "width=" + DESIGN_WIDTH);
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

@@ -63,7 +63,7 @@ function HeroSection() {
           <Lanyard position={[0, 0, 8.5]} gravity={[0, -40, 0]} fov={30} />
         </Suspense>
       </div>
-      <PageContainer className="relative flex min-h-[85vh] flex-col justify-center py-20" wide>
+      <PageContainer className="relative flex min-h-[calc(var(--vh)*85)] flex-col justify-center py-20" wide>
         <FadeInSection className="mb-10">
           <a
             className="inline-flex items-center gap-2 text-[13px] font-medium text-[#A8B1B8] transition-colors duration-300 hover:text-[#FFDD00]"

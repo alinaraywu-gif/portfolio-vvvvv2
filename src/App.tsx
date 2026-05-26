@@ -96,7 +96,7 @@ function ProjectPlaceholderPage({
         </a>
       </nav>
 
-      <section className="mx-auto grid min-h-[calc(100vh-88px)] max-w-7xl gap-10 px-5 pb-16 pt-8 sm:px-8 md:px-10 lg:grid-cols-[minmax(0,0.94fr)_minmax(360px,0.56fr)] lg:items-center lg:gap-14">
+      <section className="mx-auto grid min-h-[calc(var(--vh)*100-88px)] max-w-7xl gap-10 px-5 pb-16 pt-8 sm:px-8 md:px-10 lg:grid-cols-[minmax(0,0.94fr)_minmax(360px,0.56fr)] lg:items-center lg:gap-14">
         <div className="min-w-0">
           <p className="text-sm font-medium uppercase tracking-[0.32em] text-[#D7E2EA]/55">
             {String(index + 1).padStart(2, "0")} / 05

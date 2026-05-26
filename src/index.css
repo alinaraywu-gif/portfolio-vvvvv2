@@ -3,14 +3,6 @@
 
 @font-face {
   font-family: "Alibaba PuHuiTi 3";
-  src: url("../public/fonts/AlibabaPuHuiTi-3-35-Thin.woff2") format("woff2");
-  font-display: swap;
-  font-style: normal;
-  font-weight: 100;
-}
-
-@font-face {
-  font-family: "Alibaba PuHuiTi 3";
   src: url("../public/fonts/AlibabaPuHuiTi-3-45-Light.woff2") format("woff2");
   font-display: swap;
   font-style: normal;
@@ -20,14 +12,6 @@
 @font-face {
   font-family: "Alibaba PuHuiTi 3";
   src: url("../public/fonts/AlibabaPuHuiTi-3-55-Regular.woff2") format("woff2");
-  font-display: swap;
-  font-style: normal;
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: "Alibaba PuHuiTi 3 L3";
-  src: url("../public/fonts/AlibabaPuHuiTi-3-55-RegularL3.woff2") format("woff2");
   font-display: swap;
   font-style: normal;
   font-weight: 400;
@@ -73,13 +57,6 @@
   font-weight: 900;
 }
 
-@font-face {
-  font-family: "Alibaba PuHuiTi 3";
-  src: url("../public/fonts/AlibabaPuHuiTi-3-115-Black.woff2") format("woff2");
-  font-display: swap;
-  font-style: normal;
-  font-weight: 950;
-}
 
 @tailwind base;
 @tailwind components;
@@ -142,7 +119,17 @@ html {
 
 body {
   min-width: 320px;
-  overflow-x: clip;
+}
+
+/* PDF-like scaling: --vh is set by JS to correct vh on mobile viewport=1440 */
+:root {
+  --vh: 1vh;
+}
+.h-screen {
+  height: calc(var(--vh) * 100) !important;
+}
+.min-h-screen {
+  min-height: calc(var(--vh) * 100) !important;
 }
 
 a {
@@ -450,7 +437,7 @@ a {
 
 .scroll-stack__item {
   min-height: 700px;
-  height: 85vh;
+  height: calc(var(--vh) * 85);
   margin-bottom: var(--scroll-stack-item-distance);
   position: relative;
   transform-origin: top center;

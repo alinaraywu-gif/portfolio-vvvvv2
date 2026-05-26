@@ -229,7 +229,7 @@ function ProjectSection({ project }: { project: TestProject }) {
 
             {/* PDF embed — lazy loaded */}
             {!pdfError ? (
-              <div className="relative w-full" style={{ height: "clamp(500px, 75vh, 900px)" }}>
+              <div className="relative w-full" style={{ height: "clamp(500px, calc(var(--vh) * 75), 900px)" }}>
                 {isVisible ? (
                   <iframe
                     src={`${project.pdfPath}#toolbar=0&navpanes=0`}
