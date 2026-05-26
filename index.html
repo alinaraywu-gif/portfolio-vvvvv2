@@ -4,31 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" id="viewport-meta" />
     <script>
-      // Force 1920px fixed-width rendering on non-desktop screens
-      // so the page looks identical to desktop (like viewing a PDF)
+      // Force desktop 1920x1080 layout on mobile via CSS transform
+      // The page renders at 1920px wide, then the entire #root is scaled down to fit screen
+      // Both width AND height scale together — like viewing a PDF
       (function() {
-        var vp = document.getElementById('viewport-meta');
         var desktopWidth = 1920;
-        if (window.screen.width < desktopWidth) {
-          vp.setAttribute('content', 'width=' + desktopWidth + ', initial-scale=' + (window.screen.width / desktopWidth).toFixed(4) + ', user-scalable=yes');
-          // Fix: on mobile, override all vh-based heights to use 1080px as "screen height"
-          // This makes the page look like a 1920x1080 PDF regardless of phone aspect ratio
+        var screenWidth = window.screen.width;
+        if (screenWidth < desktopWidth) {
+          var vp = document.getElementById('viewport-meta');
+          vp.setAttribute('content', 'width=device-width, initial-scale=1.0, user-scalable=no');
+          var scale = screenWidth / desktopWidth;
           var style = document.createElement('style');
           style.textContent = [
-            'html { overflow-x: hidden; }',
-            '.h-screen { height: 1080px !important; }',
-            '.min-h-screen { min-height: 1080px !important; }',
-            '.max-h-screen { max-height: 1080px !important; }',
+            'html, body { margin: 0; padding: 0; overflow-x: hidden; background: #0C0C0C; }',
+            '#root { width: 1920px; transform-origin: top left; transform: scale(' + scale.toFixed(6) + '); }',
           ].join('\\n');
           document.head.appendChild(style);
-          // Redefine CSS env: override vh in inline styles by patching CSSStyleDeclaration
-          var origSetProp = CSSStyleDeclaration.prototype.setProperty;
-          CSSStyleDeclaration.prototype.setProperty = function(prop, value, priority) {
-            if (typeof value === 'string' && value.indexOf('vh') !== -1) {
-              value = value.replace(/([\d.]+)vh/g, function(_, n) { return (parseFloat(n) * 10.8) + 'px'; });
-            }
-            return origSetProp.call(this, prop, value, priority);
-          };
         }
       })();
     </script>
