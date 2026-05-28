@@ -158,7 +158,7 @@ function selectedPublicAssets(): Plugin {
 }
 
 export default defineConfig({
-  base: process.env.VERCEL ? '/' : (process.env.NODE_ENV === 'production' ? '/wuyueportfolio/' : '/'),
+  base: process.env.VERCEL ? '/' : (process.env.NODE_ENV === 'production' ? '/portfolio-vvvvv2/' : '/'),
   plugins: [react(), selectedPublicAssets()],
   assetsInclude: ['**/*.glb'],
 });
