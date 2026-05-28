@@ -13,7 +13,7 @@ import {
   useState,
 } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowUpRight, Download, Mail } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import AnimatedAvatar from "./AnimatedAvatar";
 import { appPath, assetPath } from "../utils/assetPath";
 
@@ -73,7 +73,7 @@ const services = [
     name: "电商体验策略",
     englishName: "Commerce UX Strategy",
     description:
-      "围绕用户决策效率拆解电商链路，把复杂的浏览、比较、信任和转化过程设计得更清晰、更容易行动。",
+      "围绕用户决策效率拆解电商链路，把浏览、比较、信任和转化过程设计得更清晰、更容易行动。",
   },
   {
     name: "产品改版设计",
@@ -144,12 +144,6 @@ const pinhaofanCoverImages = [
   coverImage("pinhaofan-1.webp"),
   coverImage("pinhaofan-2.webp"),
   coverImage("pinhaofan-3.webp"),
-];
-
-const writtenTestsCoverImages = [
-  coverImage("written-tests-1.webp"),
-  coverImage("written-tests-2.webp"),
-  coverImage("written-tests-3.webp"),
 ];
 
 const defaultProjectCoverImages = instantRetailCoverImages;
@@ -225,20 +219,6 @@ export const homeProjects: HomeProject[] = [
     nameLines: ["拼好饭用户增长", "营销设计"],
     titleClassName: "text-[clamp(1.78rem,3.25vw,3.75rem)]",
   },
-  {
-    id: "written-tests",
-    number: "06",
-    title: "笔试设计作品集",
-    englishTitle: "Written Test Projects",
-    subtitle: "天猫家装 AI · 得物商详改版 · 京东健康 IP",
-    tags: ["AI 体验设计", "商详改版", "IP 设计", "笔试题"],
-    coverImages: writtenTestsCoverImages,
-    link: "/project/written-tests",
-    category: "笔试设计题",
-    englishCategory: "Written Tests",
-    nameLines: ["笔试设计作品集"],
-    titleClassName: "text-[clamp(1.86rem,3.3vw,3.85rem)]",
-  },
 ];
 
 export const projectCards = homeProjects;
@@ -284,15 +264,14 @@ export function getProjectCoverImages(project: HomeProject) {
 }
 
 const navItems = [
-  { label: "关于", englishLabel: "About", href: "#about" },
+  { label: "概述", englishLabel: "Overview", href: "#about" },
   { label: "作品", englishLabel: "Works", href: "#works" },
   { label: "项目", englishLabel: "Projects", href: "#projects" },
-  { label: "联系", englishLabel: "Contact", href: "#contact" },
 ];
 
 export default function PortfolioLanding() {
   useEffect(() => {
-    document.title = "Neeko Wu -- UI/UX 设计师";
+    document.title = "Neeko Wu -- 项目整理";
   }, []);
 
   return (
@@ -322,7 +301,7 @@ function StickyNav() {
 
   return (
     <nav
-      className={`fixed left-0 right-0 top-0 z-50 grid grid-cols-4 items-start gap-3 px-5 pt-5 pb-4 text-center text-xs font-medium uppercase tracking-wider text-[#D7E2EA] transition-all duration-300 sm:px-6 sm:text-sm md:px-10 md:pt-6 md:text-base lg:text-lg ${
+      className={`fixed left-0 right-0 top-0 z-50 grid grid-cols-3 items-start gap-3 px-5 pt-5 pb-4 text-center text-xs font-medium uppercase tracking-wider text-[#D7E2EA] transition-all duration-300 sm:px-6 sm:text-sm md:px-10 md:pt-6 md:text-base lg:text-lg ${
         scrolled
           ? "bg-[#0C0C0C]/80 backdrop-blur-xl shadow-[0_1px_0_rgba(215,226,234,0.08)]"
           : "bg-transparent"
@@ -378,15 +357,11 @@ function HeroSection() {
         <div className="relative z-20 flex items-end justify-between gap-8 px-6 pb-7 sm:pb-8 md:px-10 md:pb-10">
           <FadeIn delay={0.35} immediate y={20}>
             <p className="max-w-[190px] text-[clamp(0.75rem,1.4vw,1.5rem)] font-light uppercase leading-snug tracking-wide text-[#D7E2EA] sm:max-w-[240px] md:max-w-[300px]">
-              用清晰的信息结构、情感化表达和视觉系统，设计更高效的电商体验
+              电商体验设计 · 项目整理
               <span className="mt-3 block text-[0.68em] tracking-[0.22em] opacity-60">
-                Commerce UX / Visual System
+                Commerce UX / Project Archive
               </span>
             </p>
-          </FadeIn>
-
-          <FadeIn delay={0.5} immediate y={20}>
-            <ContactButton />
           </FadeIn>
         </div>
       </div>
@@ -506,16 +481,15 @@ function AboutSection() {
       <div className="relative z-10 flex max-w-3xl flex-col items-center gap-10 text-center sm:gap-14 md:gap-16">
         <FadeIn y={40}>
           <h2 className="hero-heading text-keep text-center text-[clamp(3rem,12vw,160px)] font-black uppercase leading-none tracking-tight">
-            关于我
+            概述
             <span className="mt-3 block text-[0.14em] font-medium uppercase tracking-[0.28em] text-[#D7E2EA] [-webkit-text-fill-color:#D7E2EA]">
-              About me
+              Overview
             </span>
           </h2>
         </FadeIn>
 
         <div className="flex flex-col items-center gap-16 sm:gap-20 md:gap-24">
-          <AnimatedText text="我是一名关注电商体验的 UI/UX 设计师，擅长从业务背景、用户问题和转化目标出发，梳理信息结构、设计策略与视觉系统。我希望作品不仅好看，也能清楚说明为什么这样设计、如何落地，以及最终为业务和用户带来了什么价值。" />
-          <ContactButton />
+          <AnimatedText text="这份整理收录了我在美团闪购、拼好饭等业务线的核心设计项目。每个案例都从业务背景、设计策略到落地结果完整记录，方便快速了解项目全貌和设计思路。" />
         </div>
       </div>
     </section>
@@ -527,9 +501,9 @@ function ServicesSection() {
     <section className="relative z-0 bg-[#0C0C0C] px-5 py-20 text-[#D7E2EA] sm:px-8 sm:py-24 md:px-10 md:py-32">
       <FadeIn y={40}>
         <h2 className="hero-heading text-keep mb-16 text-center text-[clamp(3rem,12vw,160px)] font-black uppercase leading-none tracking-tight sm:mb-20 md:mb-28">
-          能力模型
+          设计方法
           <span className="mt-4 block text-[0.14em] font-medium uppercase tracking-[0.28em] text-[#D7E2EA] [-webkit-text-fill-color:#D7E2EA]">
-            Capability Model
+            Design Approach
           </span>
         </h2>
       </FadeIn>
@@ -978,27 +952,6 @@ function ProjectCard({
   );
 }
 
-function ContactButton() {
-  return (
-    <a
-      className="inline-flex items-center gap-3 rounded-full px-8 py-3 text-xs font-medium tracking-widest text-white outline outline-2 -outline-offset-[3px] outline-white transition-transform duration-200 hover:-translate-y-0.5 sm:px-10 sm:py-3.5 sm:text-sm md:px-12 md:py-4 md:text-base"
-      href="#contact"
-      style={{
-        background:
-          "linear-gradient(123deg, #18011F 7%, #B600A8 37%, #7621B0 72%, #BE4C00 100%)",
-        boxShadow:
-          "0px 4px 4px rgba(181, 1, 167, 0.25), 4px 4px 12px #7721B1 inset",
-      }}
-    >
-      <Mail className="h-4 w-4" />
-      联系我
-      <span className="hidden text-[0.78em] uppercase opacity-70 sm:inline">
-        Contact
-      </span>
-    </a>
-  );
-}
-
 function LiveProjectButton({ href }: { href: string }) {
   return (
     <a
@@ -1020,41 +973,9 @@ function ContactSection() {
       className="bg-[#0C0C0C] px-5 pb-16 pt-32 text-[#D7E2EA] sm:px-8 sm:pt-40 md:px-10 md:pt-48"
       id="contact"
     >
-      <div className="mx-auto grid max-w-7xl gap-8 border-t border-[#D7E2EA]/20 pt-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
-        <div className="min-w-0">
-          <p className="text-sm font-medium tracking-[0.32em] text-[#D7E2EA]/55">
-            联系 / 简历
-            <span className="ml-3 uppercase opacity-60">Contact / Resume</span>
-          </p>
-          <h2 className="text-keep mt-4 text-[clamp(2.25rem,6.2vw,5.8rem)] font-black leading-[1.04] tracking-tight">
-            <span className="block">期待和你聊聊</span>
-            <span className="block">我的设计过程</span>
-            <span className="block">与项目思考</span>
-          </h2>
-        </div>
-
-        <div className="flex flex-col gap-3 sm:flex-row lg:pb-2">
-          <a
-            className="inline-flex min-w-[168px] items-center justify-center gap-3 whitespace-nowrap rounded-full border-2 border-[#D7E2EA] px-8 py-3 text-sm font-medium tracking-widest text-[#D7E2EA] transition-colors duration-200 hover:bg-[#D7E2EA]/10 sm:px-10 sm:py-3.5"
-            href="mailto:614824146@qq.com"
-          >
-            <Mail className="h-4 w-4" />
-            邮件联系
-          </a>
-          <a
-            className="inline-flex min-w-[168px] items-center justify-center gap-3 whitespace-nowrap rounded-full border-2 border-[#D7E2EA] px-8 py-3 text-sm font-medium tracking-widest text-[#D7E2EA] transition-colors duration-200 hover:bg-[#D7E2EA]/10 sm:px-10 sm:py-3.5"
-            download
-            href={assetPath("resume.pdf")}
-          >
-            <Download className="h-4 w-4" />
-            下载简历
-          </a>
-        </div>
-      </div>
-
-      <div className="mx-auto mt-12 flex max-w-7xl items-center justify-between border-t border-[#D7E2EA]/10 pt-6 text-xs font-light tracking-wider text-[#D7E2EA]/35">
+      <div className="mx-auto flex max-w-7xl items-center justify-between border-t border-[#D7E2EA]/10 pt-6 text-xs font-light tracking-wider text-[#D7E2EA]/35">
         <span>&copy; {new Date().getFullYear()} Neeko Wu</span>
-        <span>UI/UX Designer</span>
+        <span>Project Archive</span>
       </div>
     </section>
   );

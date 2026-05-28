@@ -16,8 +16,6 @@ const DailyLowPriceCaseDetail = lazy(() => import("./components/DailyLowPriceCas
 const EmotionalDesignCaseDetail = lazy(() => import("./components/EmotionalDesignCaseDetail"));
 const PinhaofanGrowthCaseDetail = lazy(() => import("./components/PinhaofanGrowthCaseDetail"));
 const YearlyRecapCaseDetail = lazy(() => import("./components/YearlyRecapCaseDetail"));
-const WrittenTestCaseDetail = lazy(() => import("./components/WrittenTestCaseDetail"));
-
 type ProjectCard = (typeof projectCards)[number];
 
 const projectRoutePrefix = "/project/";
@@ -26,8 +24,6 @@ const dailyLowPricePath = "/project/daily-low-price";
 const emotionalDesignPath = "/project/emotional-design";
 const pinhaofanGrowthPath = "/project/pinhaofan-growth";
 const yearlyRecapPath = "/project/yearly-recap-2023";
-const writtenTestsPath = "/project/written-tests";
-
 export default function App() {
   const pathname = stripBasePath(window.location.pathname);
 
@@ -44,7 +40,6 @@ export default function App() {
       [emotionalDesignPath]: <EmotionalDesignCaseDetail />,
       [pinhaofanGrowthPath]: <PinhaofanGrowthCaseDetail />,
       [yearlyRecapPath]: <YearlyRecapCaseDetail />,
-      [writtenTestsPath]: <WrittenTestCaseDetail />,
     };
 
     const caseComponent = caseComponents[getProjectLink(project)];

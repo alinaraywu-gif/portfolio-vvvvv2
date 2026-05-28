@@ -72,8 +72,8 @@ const heroHighlights = [
   },
   {
     label: "业务结果",
-    value: "+0.4pp CTR",
-    detail: "商品卡点击稳定提升，最优实验组 CXR +0.13pp。",
+    value: "CTR 稳定提升",
+    detail: "商品卡点击稳定提升，最优实验组 CXR 同步正向。",
   },
 ] as const;
 
@@ -186,9 +186,9 @@ const choiceNotes = {
 } as const;
 
 const screenResults = [
-  ["首屏释放", ">50%"],
-  ["卡片高度", "260px → 232px"],
-  ["每屏商品", "+3 个"],
+  ["首屏释放", "超过一半"],
+  ["卡片高度", "压缩优化"],
+  ["每屏商品", "增加曝光"],
 ] as const;
 
 const visualGroups = [
@@ -987,17 +987,17 @@ function ResultsSection() {
               目标验证
             </p>
             <p className="mt-4 font-mono text-[clamp(2rem,5vw,4rem)] font-black leading-none text-[#FF2469]">
-              +0.4pp
+              超过目标
             </p>
             <p className="mt-3 text-[14px] leading-relaxed text-[#A8B1B8]">
-              商品卡 CTR 超过原目标 +0.3pp，说明「空间重排 + 信息前置」的方向有效。
+              商品卡 CTR 超过原定目标，说明「空间重排 + 信息前置」的方向有效。
             </p>
           </div>
           <div className="grid bg-[#0d0e10] sm:grid-cols-3">
             {[
-              ["目标", "+0.3pp"],
-              ["实际", "+0.4pp"],
-              ["超出", "约 33%"],
+              ["目标", "设定基线"],
+              ["实际", "超过目标"],
+              ["结论", "方向验证"],
             ].map(([label, value]) => (
               <div className="border-b border-white/[0.07] p-6 last:border-b-0 sm:border-b-0 sm:border-r sm:last:border-r-0" key={label}>
                 <p className="text-[12px] font-medium text-[#F4F7F8]/42">{label}</p>
